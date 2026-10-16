@@ -8,7 +8,7 @@ mezclada).
 
 | ID | Requerimiento | Fragmento(s) de origen |
 |----|---------------|--------------------------|
-| RF-01 | El sistema debe registrar clientes, con id y nombre| |
+| RF-01 | G00-8 | El sistema debe registrar cada orden … | Usuario / F | §2.1; V3 | … |
 | RF-02 | | |
 | RF-03 | | |
 | RF-04 | | |
