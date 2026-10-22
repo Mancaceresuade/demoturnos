@@ -1,29 +1,28 @@
 # Tabla de decisión
 
-## [nombre de la decisión a tabular]
+## Cancelación de un turno (RF-02)
 
-Completar condiciones (una fila por condición, con sus valores
-posibles) y acciones (una fila por acción), una columna por regla.
-Usar guion (`-`) donde la condición no importa para esa regla.
+| Condición / Acción | Regla 1 | Regla 2 | Regla por defecto |
+|----------------------|---------|---------|---------------------|
+| El turno está Confirmado | Sí | Sí | - |
+| Faltan 24 horas o más para el turno | Sí | No | - |
+| **Acción** | Cancelar el turno | No permitir la cancelación | No cancelar y avisar a la recepción |
 
-| Condición / Acción | Regla 1 | Regla 2 | Regla 3 | ... | Regla por defecto |
-|----------------------|---------|---------|---------|-----|---------------------|
-| Condición A | | | | | - |
-| Condición B | | | | | - |
-| **Acción** | | | | | |
+**Regla por defecto:** cualquier caso que no sea un turno Confirmado (por
+ejemplo, un turno Solicitado o Atendido) no se cancela desde el sistema y
+se le avisa a la recepción. Ver la observación sobre turnos Solicitados.
 
-**Regla por defecto:** describir qué pasa cuando ninguna regla nombrada
-aplica — no puede quedar implícita.
+**Cómo se lee esta tabla:** se evalúan las reglas de izquierda a derecha;
+la primera que se cumple decide. Si ninguna se cumple, aplica la regla por
+defecto.
 
-**Cómo se lee esta tabla:** (una o dos líneas explicando el orden de
-evaluación de las reglas, si corresponde).
+## Observaciones
 
-## Observaciones (obligatorio si el material relevado tiene conflictos o huecos)
-
-- **Conflictos detectados:** (ver "Detección de conflictos" en
-  skill/SKILL.md — valores distintos para la misma condición, sin
-  aclarar cuál prevalece)
-- **Huecos del material:** (una condición necesaria para la tabla que
-  ningún fragmento aclaró)
-- **Decisiones de negocio pendientes:** (qué haría falta confirmar con
-  el cliente/usuario antes de dar esta tabla por definitiva)
+- **Conflictos detectados:** ninguno entre fragmentos.
+- **Huecos del material:**
+  - F2 no dice qué pasa con exactamente 24 horas de anticipación.
+    [NEEDS CLARIFICATION: ¿con 24 h exactas se puede cancelar? Decide la recepción.]
+  - F2 habla de cancelar un turno, pero no dice si un turno todavía
+    Solicitado (sin confirmar) se puede cancelar.
+- **Decisiones de negocio pendientes:** los dos huecos anteriores. Hasta
+  que la recepción los decida, la regla por defecto no cancela.
